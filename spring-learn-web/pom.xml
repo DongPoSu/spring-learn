@@ -11,11 +11,16 @@
     <name>spring-learn-web Maven Webapp</name>
     <url>http://maven.apache.org</url>
 
-    <build>
-        <finalName>spring-learn-web</finalName>
-    </build>
 
     <dependencies>
+
+        <!--local module start-->
+        <dependency>
+            <groupId>com.walkbear.spring-learn</groupId>
+            <artifactId>spring-learn-common</artifactId>
+        </dependency>
+        <!--local module end-->
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
@@ -50,4 +55,28 @@
             <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
+
+    <build>
+        <finalName>spring-learn-web</finalName>
+        <resources>
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
+                <excludes>
+                    <exclude>filter/**</exclude>
+                </excludes>
+                <filtering>true</filtering>
+            </resource>
+
+            <resource>
+                <directory>${project.basedir}/spring-learn-common/src/main/resources</directory>
+                <excludes>
+                    <exclude>filter/**</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <filters>
+            <filter>${basedir}/src/main/resources/filter/${env}.properties</filter>
+        </filters>
+    </build>
+
 </project>

@@ -1,5 +1,6 @@
 package com.walkbear.spring.learn.web.controller;
 
+import com.walkbear.spring.learn.common.utils.DateUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +23,7 @@ public class TestController {
     @RequestMapping(value = "/get")
     public String get(){
         log.info("the method name's get be invoked");
-        return "get";
+        return DateUtils.getDayBegin().toString();
     }
 }
 
