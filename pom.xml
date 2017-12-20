@@ -11,9 +11,46 @@
 
     <properties>
         <spring.version>5.0.2.RELEASE</spring.version>
+        <slf4j.version>1.7.24</slf4j.version>
+        <log4j.over.slf4j.version>1.7.24</log4j.over.slf4j.version>
+        <logback.version>1.1.11</logback.version>
+        <lombok.version>1.16.4</lombok.version>
     </properties>
     <dependencyManagement>
         <dependencies>
+            <!-- lombok start-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <!--lombok end-->
+
+            <!--log related start-->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-parent</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <!--log related end-->
+
+            <!--spring start-->
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-webmvc</artifactId>
@@ -34,7 +71,10 @@
                 <artifactId>spring-web</artifactId>
                 <version>${spring.version}</version>
             </dependency>
+            <!--spring end-->
         </dependencies>
+
     </dependencyManagement>
+
 
 </project>

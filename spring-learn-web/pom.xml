@@ -11,6 +11,10 @@
     <name>spring-learn-web Maven Webapp</name>
     <url>http://maven.apache.org</url>
 
+    <build>
+        <finalName>spring-learn-web</finalName>
+    </build>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -28,8 +32,22 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
     </dependencies>
-    <build>
-        <finalName>spring-learn-web</finalName>
-    </build>
 </project>

@@ -1,5 +1,6 @@
 package com.walkbear.spring.learn.web.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,12 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
  * description :
  * @author suzheng
  */
+@Slf4j
 @RestController
 @RequestMapping(value = "/test",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class TestController {
 
     @RequestMapping(value = "/get")
     public String get(){
+        log.info("the method name's get be invoked");
         return "get";
     }
 }
