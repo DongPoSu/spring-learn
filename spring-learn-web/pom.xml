@@ -66,16 +66,9 @@
                 </excludes>
                 <filtering>true</filtering>
             </resource>
-
-            <resource>
-                <directory>${project.basedir}/spring-learn-common/src/main/resources</directory>
-                <excludes>
-                    <exclude>filter/**</exclude>
-                </excludes>
-            </resource>
         </resources>
         <filters>
-            <filter>${basedir}/src/main/resources/filter/${env}.properties</filter>
+            <filter>src/main/resources/filter/${env}.properties</filter>
         </filters>
     </build>
 

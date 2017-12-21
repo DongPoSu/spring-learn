@@ -18,8 +18,27 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <configuration>
                     <excludes>
-                        <exclude>/filter/**</exclude>
+                        <exclude>filter/**</exclude>
+                        <exclude>properties/**</exclude>
+                        <exclude>spring/**</exclude>
                     </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <goal>copy-resources</goal>
+                    <buildFilters>
+                        <buildFilter></buildFilter>
+                    </buildFilters>
+                    <outputDirectory>${parent.basedir}/spring-learn-web/target/spring-learn-web/WEB-INF/</outputDirectory>
+                    <resources>
+                        <resource>${basedir}/src/main/resources</resource>
+                        <excludes>
+                            <exclude>filter/**</exclude>
+                        </excludes>
+                    </resources>
                 </configuration>
             </plugin>
         </plugins>
