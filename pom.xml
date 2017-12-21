@@ -8,6 +8,10 @@
     <modules>
         <module>spring-learn-web</module>
         <module>spring-learn-common</module>
+        <module>spring-learn-persistence</module>
+        <module>spring-learn-persistence-api</module>
+        <module>spring-learn-service-api</module>
+        <module>spring-learn-service</module>
     </modules>
 
     <properties>
@@ -207,6 +211,16 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-web</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
                 <version>${spring.version}</version>
             </dependency>
             <!--spring end-->
