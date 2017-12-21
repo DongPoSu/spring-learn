@@ -19,6 +19,14 @@
             <groupId>com.walkbear.spring-learn</groupId>
             <artifactId>spring-learn-common</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.walkbear.spring-learn</groupId>
+            <artifactId>spring-learn-persistence</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.walkbear.spring-learn</groupId>
+            <artifactId>spring-learn-service</artifactId>
+        </dependency>
         <!--local module end-->
 
         <dependency>
@@ -57,7 +65,7 @@
     </dependencies>
 
     <build>
-        <finalName>spring-learn-web</finalName>
+        <finalName>spring-learn-web-${devModel}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -65,10 +73,34 @@
                 <configuration>
                     <resources>
                         <resource>
-                            <directory>${basedir}/../spring-learn-common/src/main/resources</directory>
+                            <directory>${basedir}/../spring-learn-persistence/src/main/resources</directory>
+                        </resource>
+                        <resource>
+                            <directory>${basedir}/../spring-learn-persistence-service/src/main/resources</directory>
                         </resource>
                     </resources>
+
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>com.alibaba.citrus.tool</groupId>
+                <artifactId>autoconfig-maven-plugin</artifactId>
+                <version>${autoconfig-plugin.version}</version>
+                <configuration>
+                    <charset>${project.build.sourceEncoding}</charset>
+                    <dest>${project.artifact.file}</dest>
+
+                    <userProperties>${basedir}/../config/${autoconfig.properties}</userProperties>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>autoconfig</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

@@ -12,4 +12,10 @@
     <artifactId>spring-learn-service</artifactId>
 
 
+    <dependencies>
+        <dependency>
+            <groupId>com.walkbear.spring-learn</groupId>
+            <artifactId>spring-learn-service-api</artifactId>
+        </dependency>
+    </dependencies>
 </project>

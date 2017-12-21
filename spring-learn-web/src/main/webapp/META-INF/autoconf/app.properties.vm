@@ -1,0 +1,10 @@
+######################  log config start  ######################
+log.logLevel=${log_logLevel}
+log.logAdditivity=${log_logAdditivity}
+log.logDefaultFile=${log_logDefaultFile}
+log.logErrorDefaultFile=${log_logErrorDefaultFile}
+log.logRoot=${log_logRoot}
+######################  log config end  ######################
+
+#应用的环境
+application.environment.name=${application_environment_name}

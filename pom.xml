@@ -19,11 +19,26 @@
         <spring-learn>1.0.0</spring-learn>
         <!--local module end-->
 
+        <cglib.version>3.2.1</cglib.version>
+        <asm.version>5.1</asm.version>
+
+        <mockito.version>1.10.19</mockito.version>
+        <junit.version>4.12</junit.version>
+        <testng.version>6.9.10</testng.version>
+
         <spring.version>5.0.2.RELEASE</spring.version>
         <slf4j.version>1.7.24</slf4j.version>
         <log4j.over.slf4j.version>1.7.24</log4j.over.slf4j.version>
         <logback.version>1.1.11</logback.version>
         <lombok.version>1.16.0</lombok.version>
+
+        <druid.version>1.1.2</druid.version>
+
+        <mysql.version>5.1.40</mysql.version>
+        <mybatis.version>3.4.2</mybatis.version>
+        <mybatis-spring.version>1.3.1</mybatis-spring.version>
+        <mybatis-generator-core.version>1.3.2</mybatis-generator-core.version>
+        <mybatis-redis-cache.version>1.0.0-beta2</mybatis-redis-cache.version>
 
         <!--maven plugin start-->
         <maven.compiler.plugin.version>3.1</maven.compiler.plugin.version>
@@ -158,7 +173,110 @@
                 <artifactId>spring-learn-common</artifactId>
                 <version>${spring-learn}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.walkbear.spring-learn</groupId>
+                <artifactId>spring-learn-service-api</artifactId>
+                <version>${spring-learn}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.walkbear.spring-learn</groupId>
+                <artifactId>spring-learn-service</artifactId>
+                <version>${spring-learn}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.walkbear.spring-learn</groupId>
+                <artifactId>spring-learn-persistence-api</artifactId>
+                <version>${spring-learn}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.walkbear.spring-learn</groupId>
+                <artifactId>spring-learn-persistence</artifactId>
+                <version>${spring-learn}</version>
+            </dependency>
             <!--local module end-->
+
+            <!--代理相关start-->
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>${cglib.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.ow2.asm</groupId>
+                <artifactId>asm</artifactId>
+                <version>${asm.version}</version>
+            </dependency>
+            <!--代理相关end-->
+
+            <!--test related begin -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-all</artifactId>
+                <version>${mockito.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>${testng.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!--test related begin -->
+
+            <!-- alibaba druid 数据库连接池 begin -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <!-- alibaba druid 数据库连接池 end -->
+
+            <!--mybatis start-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>${mybatis-spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-core</artifactId>
+                <version>${mybatis-generator-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.caches</groupId>
+                <artifactId>mybatis-redis</artifactId>
+                <version>${mybatis-redis-cache.version}</version>
+            </dependency>
+            <!--mybatis end-->
 
             <!-- lombok start-->
             <dependency>
@@ -231,7 +349,8 @@
         <profile>
             <id>dev</id>
             <properties>
-                <env>dev-app</env>
+                <devModel>dev</devModel>
+                <autoconfig.properties>dev-app.properties</autoconfig.properties>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -240,13 +359,13 @@
         <profile>
             <id>test</id>
             <properties>
-                <env>dev-app</env>
+                <devModel>dev-app</devModel>
             </properties>
         </profile>
         <profile>
             <id>product</id>
             <properties>
-                <env>product-app</env>
+                <devModel>product-app</devModel>
             </properties>
         </profile>
     </profiles>
