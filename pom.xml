@@ -359,13 +359,13 @@
         <profile>
             <id>test</id>
             <properties>
-                <devModel>dev-app</devModel>
+                <devModel>test</devModel>
             </properties>
         </profile>
         <profile>
             <id>product</id>
             <properties>
-                <devModel>product-app</devModel>
+                <devModel>product</devModel>
             </properties>
         </profile>
     </profiles>

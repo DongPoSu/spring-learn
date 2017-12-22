@@ -74,6 +74,10 @@
                     <resources>
                         <resource>
                             <directory>${basedir}/../spring-learn-persistence/src/main/resources</directory>
+                            <excludes>
+                                <exclude>**/mybatis-generator/**</exclude>
+                                <exclude>**/properties/**</exclude>
+                            </excludes>
                         </resource>
                         <resource>
                             <directory>${basedir}/../spring-learn-persistence-service/src/main/resources</directory>
