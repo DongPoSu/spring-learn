@@ -31,6 +31,11 @@
     <dependencies>
         <dependency>
             <groupId>com.walkbear.spring-learn</groupId>
+            <artifactId>spring-learn-common</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.walkbear.spring-learn</groupId>
             <artifactId>spring-learn-persistence-api</artifactId>
         </dependency>
 
@@ -45,6 +50,21 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
 
         <!--log related begin -->

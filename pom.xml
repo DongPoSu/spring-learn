@@ -32,6 +32,9 @@
         <logback.version>1.1.11</logback.version>
         <lombok.version>1.16.0</lombok.version>
 
+        <commons-lang3.version>3.1</commons-lang3.version>
+
+
         <druid.version>1.1.2</druid.version>
 
         <mysql.version>5.1.40</mysql.version>
@@ -198,6 +201,14 @@
                 <version>${spring-learn}</version>
             </dependency>
             <!--local module end-->
+
+            <!--apache common jar start-->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <!--apache common jar end-->
 
             <!--代理相关start-->
             <dependency>
