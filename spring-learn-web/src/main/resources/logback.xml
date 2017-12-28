@@ -46,7 +46,7 @@
     </appender>
 
     <logger name="org.springframework" level="WARN" additivity="${log.logAdditivity}">
-        <appender-ref ref="error"/>
+        <appender-ref ref="STDOUT"/>
     </logger>
 
     <logger name="com.walkbear"  additivity="${log.logAdditivity}">

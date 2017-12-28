@@ -8,3 +8,4 @@ log.logRoot=${log_logRoot}
 
 #应用的环境
 application.environment.name=${application_environment_name}
+img.server.url=${img_server_url}

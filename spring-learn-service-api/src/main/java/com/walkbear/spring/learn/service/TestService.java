@@ -5,6 +5,9 @@ package com.walkbear.spring.learn.service;
  * User: qiujingwang
  * Date: 2017-08-23
  * Description:
+ * @author suzheng
  */
-public interface TempService {
+public interface TestService {
+
+    void print();
 }
